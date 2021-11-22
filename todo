@@ -1,16 +1,1 @@
-1. Bangun servlet done
-2. See Variant Feature 
-    a. buat koneksi rest dogetVariant ke backend done
-    b. buat koneksi soap ke toko, handle getVariant request
-
-3. Add stok request Feature
-    a. buat koneksi rest doPostAddStokReq (variant, num) ke backend
-    b. buat koneksi soap ke toko, handle PostAddStokReq request
-
-4. Rate limiter Feature
-    a. buat koneksi ke db (use jdbc)
-    b. buat logicnya
-
-5. Read request status
-    a. buat koneksi rest doGetReqStat
-    b. buat koneksi soap ke toko
+Test see request
