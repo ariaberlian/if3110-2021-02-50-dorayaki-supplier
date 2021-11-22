@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://jayen.com" xmlns:intf="http://jayen.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jayen.com">
+             
+  
+  
+  
+  
+  
+  <wsdl:types>
+                          
+    
+    
+    
+    
+    
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://jayen.com">
+                                       
+      
+      
+      
+      
+      
+      <element name="getVariant">
+   </element>
+                                       
+      
+      
+      
+      
+      
+      <element name="getVariantResponse">
+                                                    
+        
+        
+        
+        
+        
+        <complexType>
+                                                                 
+          
+          
+          
+          
+          
+          <sequence>
+                                                                              
+            
+            
+            
+            
+            
+            <element name="getVariantReturn" type="xsd:string"/>
+                                                                             
+          
+          
+          
+          
+          
+          </sequence>
+                                                                
+        
+        
+        
+        
+        
+        </complexType>
+                                                   
+      
+      
+      
+      
+      
+      </element>
+                                      
+    
+    
+    
+    
+    
+    </schema>
+                         
+  
+  
+  
+  
+  
+  </wsdl:types>
+               
+  
+  
+  
+  
+  
+  <wsdl:message name="getVariantRequest">
+                              
+    
+    
+    
+    
+    
+    <wsdl:part element="impl:getVariant" name="parameters">
+
+      </wsdl:part>
+                           
+  
+  
+  
+  
+  
+  </wsdl:message>
+               
+  
+  
+  
+  
+  
+  <wsdl:message name="getVariantResponse">
+                              
+    
+    
+    
+    
+    
+    <wsdl:part element="impl:getVariantResponse" name="parameters">
+
+      </wsdl:part>
+                           
+  
+  
+  
+  
+  
+  </wsdl:message>
+               
+  
+  
+  
+  
+  
+  <wsdl:portType name="Variant">
+                              
+    
+    
+    
+    
+    
+    <wsdl:operation name="getVariant">
+                                             
+      
+      
+      
+      
+      
+      <wsdl:input message="impl:getVariantRequest" name="getVariantRequest">
+
+       </wsdl:input>
+                                             
+      
+      
+      
+      
+      
+      <wsdl:output message="impl:getVariantResponse" name="getVariantResponse">
+
+       </wsdl:output>
+                                          
+    
+    
+    
+    
+    
+    </wsdl:operation>
+                           
+  
+  
+  
+  
+  
+  </wsdl:portType>
+               
+  
+  
+  
+  
+  
+  <wsdl:binding name="VariantSoapBinding" type="impl:Variant">
+                              
+    
+    
+    
+    
+    
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+                              
+    
+    
+    
+    
+    
+    <wsdl:operation name="getVariant">
+                                             
+      
+      
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                             
+      
+      
+      
+      
+      
+      <wsdl:input name="getVariantRequest">
+                                                            
+        
+        
+        
+        
+        
+        <wsdlsoap:body use="literal"/>
+                                                         
+      
+      
+      
+      
+      
+      </wsdl:input>
+                                             
+      
+      
+      
+      
+      
+      <wsdl:output name="getVariantResponse">
+                                                            
+        
+        
+        
+        
+        
+        <wsdlsoap:body use="literal"/>
+                                                         
+      
+      
+      
+      
+      
+      </wsdl:output>
+                                          
+    
+    
+    
+    
+    
+    </wsdl:operation>
+                           
+  
+  
+  
+  
+  
+  </wsdl:binding>
+               
+  
+  
+  
+  
+  
+  <wsdl:service name="VariantService">
+                              
+    
+    
+    
+    
+    
+    <wsdl:port binding="impl:VariantSoapBinding" name="Variant">
+                                             
+      
+      
+      
+      
+      
+      <wsdlsoap:address location="http://localhost:8080/JayenInterface/services/Variant"/>
+                                          
+    
+    
+    
+    
+    
+    </wsdl:port>
+                           
+  
+  
+  
+  
+  
+  </wsdl:service>
+            
+
+
+
+
+
+</wsdl:definitions>
