@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://seereq.jayen.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://seereq.jayen.com" xmlns:intf="http://seereq.jayen.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://seereq.jayen.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="see_request_status">
+    <complexType>
+     <sequence>
+      <element name="ip" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="see_request_statusResponse">
+    <complexType>
+     <sequence>
+      <element name="see_request_statusReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="see_request_statusRequest">
+
+      <wsdl:part element="impl:see_request_status" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="see_request_statusResponse">
+
+      <wsdl:part element="impl:see_request_statusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SeeRequestStatusServiceImpl">
+
+      <wsdl:operation name="see_request_status">
+
+         <wsdl:input message="impl:see_request_statusRequest" name="see_request_statusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:see_request_statusResponse" name="see_request_statusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SeeRequestStatusServiceImplSoapBinding" type="impl:SeeRequestStatusServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="see_request_status">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="see_request_statusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="see_request_statusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SeeRequestStatusServiceImplService">
+
+      <wsdl:port binding="impl:SeeRequestStatusServiceImplSoapBinding" name="SeeRequestStatusServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/JayenInterface/services/SeeRequestStatusServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://addstok.jayen.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://addstok.jayen.com" xmlns:intf="http://addstok.jayen.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://addstok.jayen.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="add_stok">
+    <complexType>
+     <sequence>
+      <element name="ip" type="xsd:string"/>
+      <element name="variant" type="xsd:string"/>
+      <element name="num" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="add_stokResponse">
+    <complexType>
+     <sequence>
+      <element name="add_stokReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="add_stokResponse">
+
+      <wsdl:part element="impl:add_stokResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="add_stokRequest">
+
+      <wsdl:part element="impl:add_stok" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AddStokServiceImpl">
+
+      <wsdl:operation name="add_stok">
+
+         <wsdl:input message="impl:add_stokRequest" name="add_stokRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:add_stokResponse" name="add_stokResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AddStokServiceImplSoapBinding" type="impl:AddStokServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="add_stok">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="add_stokRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="add_stokResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AddStokServiceImplService">
+
+      <wsdl:port binding="impl:AddStokServiceImplSoapBinding" name="AddStokServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/JayenInterface/services/AddStokServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

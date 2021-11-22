@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SeeRequestStatusServiceImplService WSDL service -->
+
+  <service name="SeeRequestStatusServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://seereq.jayen.com"/>
+      <parameter name="wsdlServiceElement" value="SeeRequestStatusServiceImplService"/>
+      <parameter name="schemaQualified" value="http://seereq.jayen.com"/>
+      <parameter name="wsdlServicePort" value="SeeRequestStatusServiceImpl"/>
+      <parameter name="className" value="com.jayen.seereq.SeeRequestStatusServiceImpl"/>
+      <parameter name="wsdlPortType" value="SeeRequestStatusServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://seereq.jayen.com" xmlns:retNS="http://seereq.jayen.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="see_request_status" qname="operNS:see_request_status" returnQName="retNS:see_request_statusReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://seereq.jayen.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ip" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="see_request_status"/>
+
+  </service>
+</deployment>

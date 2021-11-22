@@ -1,0 +1,31 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AddStokServiceImplService WSDL service -->
+
+  <service name="AddStokServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://addstok.jayen.com"/>
+      <parameter name="wsdlServiceElement" value="AddStokServiceImplService"/>
+      <parameter name="schemaQualified" value="http://addstok.jayen.com"/>
+      <parameter name="wsdlServicePort" value="AddStokServiceImpl"/>
+      <parameter name="className" value="com.jayen.addstok.AddStokServiceImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="AddStokServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="add_stok" qname="operNS:add_stok" xmlns:operNS="http://addstok.jayen.com" returnQName="retNS:add_stokReturn" xmlns:retNS="http://addstok.jayen.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ip" xmlns:pns="http://addstok.jayen.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:variant" xmlns:pns="http://addstok.jayen.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:num" xmlns:pns="http://addstok.jayen.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="add_stok"/>
+
+  </service>
+</deployment>
