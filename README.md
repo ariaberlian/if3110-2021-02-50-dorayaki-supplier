@@ -13,7 +13,7 @@ bahan_resep (id_resep) -> resep (id_resep)
 bahan_resep (bahan_baku) -> bahan_baku (nama_bahan)
 
 # Pembagian tugas
-1. Rate Limiter
-2. Add stok request
-3. See Request
-4. Get variant list
+1. Rate Limiter: 13519115
+2. Add stok request: 13519115
+3. See Request: 13519115
+4. Get variant list 13519075
